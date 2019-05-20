@@ -13,6 +13,9 @@
 		092EF3B42292F5990091E3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092EF3B32292F5990091E3AB /* Assets.xcassets */; };
 		092EF3B72292F5990091E3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092EF3B52292F5990091E3AB /* LaunchScreen.storyboard */; };
 		092EF3C82292FD1B0091E3AB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092EF3C72292FD1B0091E3AB /* CollectionViewCell.swift */; };
+		092EF3CA22931F1B0091E3AB /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092EF3C922931F1B0091E3AB /* BeerModel.swift */; };
+		092EF3CC229320B60091E3AB /* BeerAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092EF3CB229320B60091E3AB /* BeerAPIClient.swift */; };
+		092EF3CE229321740091E3AB /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092EF3CD229321740091E3AB /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		092EF3B62292F5990091E3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		092EF3B82292F5990091E3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		092EF3C72292FD1B0091E3AB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		092EF3C922931F1B0091E3AB /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		092EF3CB229320B60091E3AB /* BeerAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPIClient.swift; sourceTree = "<group>"; };
+		092EF3CD229321740091E3AB /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 		092EF3BE2292FB5E0091E3AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				092EF3C922931F1B0091E3AB /* BeerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -80,6 +87,8 @@
 		092EF3C02292FB710091E3AB /* Network Helper */ = {
 			isa = PBXGroup;
 			children = (
+				092EF3CB229320B60091E3AB /* BeerAPIClient.swift */,
+				092EF3CD229321740091E3AB /* APIKeys.swift */,
 			);
 			path = "Network Helper";
 			sourceTree = "<group>";
@@ -186,7 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092EF3CE229321740091E3AB /* APIKeys.swift in Sources */,
+				092EF3CC229320B60091E3AB /* BeerAPIClient.swift in Sources */,
 				092EF3AF2292F5980091E3AB /* ViewController.swift in Sources */,
+				092EF3CA22931F1B0091E3AB /* BeerModel.swift in Sources */,
 				092EF3AD2292F5980091E3AB /* AppDelegate.swift in Sources */,
 				092EF3C82292FD1B0091E3AB /* CollectionViewCell.swift in Sources */,
 			);
