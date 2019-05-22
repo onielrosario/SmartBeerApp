@@ -30,7 +30,39 @@ final class BeerAPIClient {
     }
     
     
+    static func getCategories(completionHandler: @escaping(Error?, [CategoryInfo.Category]?) -> Void) {
+        guard let url = URL(string: "http://api.brewerydb.com/v2/categories/?key=\(Keys.key)") else {
+            return 
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+               completionHandler(error,nil)
+            } else if let data = data {
+                do {
+                    let categoryInfo = try JSONDecoder().decode(CategoryInfo.self, from: data)
+                    completionHandler(nil, categoryInfo.data)
+                } catch {
+                    completionHandler(error,nil)
+                }
+            }
+        }.resume()
+    }
     
-    
-    
+    static func getBeersFromCategory(category: String, completionHandler: @escaping(Error?, [Beer.BeerInfo]?) -> Void) {
+        guard let url = URL(string: "http://api.brewerydb.com/v2/beers/?key=\(Keys.key)") else {
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(error, nil)
+            } else if let data = data {
+                do {
+                     let allBeers = try JSONDecoder().decode(Beer.self, from: data)
+                    completionHandler(nil,allBeers.data.filter{$0.style?.category.name == category})
+                } catch {
+                    completionHandler(error,nil)
+                }
+            }
+        }.resume()
+    }
 }

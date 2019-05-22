@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class HeaderView: UICollectionReusableView {
     @IBOutlet var content: UIView!
+
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,5 +28,4 @@ class HeaderView: UICollectionReusableView {
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
         addSubview(content)
     }
-    
 }
