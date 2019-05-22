@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Beer: Codable {
-    struct BeerInfo: Codable {
+class Beer: Codable {
+    class BeerInfo: Codable {
         let id: String
         let name: String
         let abv: String?
-        struct Label:Codable {
+        class Label:Codable {
             let icon: String
             let large: String
         }

@@ -74,6 +74,13 @@
                                                     <color key="textColor" red="0.26142409610821915" green="0.4279294481" blue="0.52180916460821913" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-A8-9tv">
+                                                    <rect key="frame" x="12" y="260" width="70" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="RNU-dA-wKZ"/>
+                                                        <constraint firstAttribute="height" constant="50" id="XNJ-xp-dvL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -83,10 +90,13 @@
                                             <constraint firstItem="bao-kC-IbK" firstAttribute="leading" secondItem="fEe-Zc-rhO" secondAttribute="leading" id="F1c-Nh-k8T"/>
                                             <constraint firstAttribute="bottom" secondItem="QTx-AQ-xhy" secondAttribute="bottom" id="NYT-h5-2Zi"/>
                                             <constraint firstAttribute="bottom" secondItem="wXf-ID-LZA" secondAttribute="bottom" id="cJ0-Ah-3Fh"/>
+                                            <constraint firstItem="UxG-A8-9tv" firstAttribute="centerX" secondItem="QTx-AQ-xhy" secondAttribute="centerX" id="fN6-AO-IPG"/>
                                             <constraint firstAttribute="trailing" secondItem="wXf-ID-LZA" secondAttribute="trailing" id="i3R-R8-hbA"/>
+                                            <constraint firstItem="UxG-A8-9tv" firstAttribute="centerY" secondItem="QTx-AQ-xhy" secondAttribute="centerY" multiplier="1.1" id="mYb-kM-mxY"/>
                                             <constraint firstAttribute="trailing" secondItem="bao-kC-IbK" secondAttribute="trailing" id="ojy-bd-xof"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="beerLabel" destination="UxG-A8-9tv" id="L4p-mq-jf7"/>
                                             <outlet property="berrNameLabel" destination="bao-kC-IbK" id="MS2-lw-k1h"/>
                                             <outlet property="cellImage" destination="QTx-AQ-xhy" id="7Yi-sF-473"/>
                                             <outlet property="textView" destination="3VC-qa-53C" id="tJd-1l-WKg"/>
@@ -208,11 +218,11 @@
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="115.84821428571428"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="dxv-Er-nhl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9bA-TG-cvh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8YY-4o-lcA"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-beer-glass-26" id="8YY-4o-lcA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o2j-9J-QeE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -232,6 +242,7 @@
     </scenes>
     <resources>
         <image name="beer-placeholder" width="231" height="396"/>
+        <image name="icons8-beer-glass-26" width="26" height="26"/>
     </resources>
     <color key="tintColor" red="0.28333655330000002" green="0.4279294481" blue="0.4480184968" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
