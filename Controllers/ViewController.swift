@@ -58,9 +58,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
         let beer = allBeers[indexPath.row]
-        cell.berrNameLabel.text = beer.style?.shortName
-        cell.textView.text = beer.style?.description
-        cell.beerLabel.kf.setImage(with: URL(string: beer.labels?.large ?? "no image"), placeholder:#imageLiteral(resourceName: "generic-beer-label.png") )
+        let cache = NSCache<NSString, Beer.BeerInfo>()
+        if let cachedObject = cache.object(forKey: "cachedBeers") {
+            cell.updateCell(beer: cachedObject)
+        } else {
+             cell.updateCell(beer: beer)
+        }
         return cell
     }
     
