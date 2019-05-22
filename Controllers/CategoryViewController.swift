@@ -37,6 +37,15 @@ class CategoryViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       guard let destination = segue.destination as? MainViewController,
+        let indexpath = collectionView.indexPath(for: sender as! CategoryCollectionViewCell) else {
+      return
+    }
+    let category = categories[indexpath.row]
+    destination.category = category.name
+}
 }
 
 extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -57,8 +66,8 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        presentViewcontroller(category: category.name)
+//        let category = categories[indexPath.row]
+//        presentViewcontroller(category: category.name)
     }
     
     private func presentViewcontroller(category: String) {

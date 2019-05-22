@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,8 +24,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      setupCollectionView()
-       updateBeers()
-  
+    updateBeers()
+    title = category
     }
 
     
@@ -56,6 +57,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
+        let beer = allBeers[indexPath.row]
+        cell.berrNameLabel.text = beer.style?.shortName
+        cell.textView.text = beer.style?.description
+        cell.beerLabel.kf.setImage(with: URL(string: beer.labels?.large ?? "no image"), placeholder:#imageLiteral(resourceName: "generic-beer-label.png") )
         return cell
     }
     
